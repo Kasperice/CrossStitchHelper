@@ -9,9 +9,7 @@
 
 What about seeing those images:
 
-<img src="example/test_scheme/res_1_test.png" width="200" height="200">
-<img src="example/test_scheme/res_2_test.png" width="200" height="200">
-<img src="example/test_scheme/res_3_test.png" width="200" height="200">
+<img src="example/test_scheme/res_1_test.png" width="200" height="200"> <img src="example/test_scheme/res_2_test.png" width="200" height="200"> <img src="example/test_scheme/res_3_test.png" width="200" height="200">
 
 Instead of:
 
@@ -74,6 +72,7 @@ sample_width = 20
 ```
 
 Example, how to measure cross stitch for template section:
+
 ![template_measurement_example.png](example%2Ftemplate_measurement_example.png)
 
 1px - offset/borders (in this case same for x and y)
