@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "crossstitchhelper"
+version = "0.1.0"
+description = "App for Cross Stitching enthusiasts"
+authors = ["Kasper Biegun <kasper.biegun95@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.24.3"
+opencv-python = "^4.7.0.72"
+pick = "^2.2.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

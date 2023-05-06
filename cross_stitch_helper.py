@@ -48,7 +48,6 @@ class CrossStitchHelper:
         sample_width = int(template_parameters['sample_width'])
 
         new_coords = []
-        print(coords)
         for x, y in coords:
             a = y_offset + x * (sample_width + 2 * y_offset)
             b = x_offset + y * (sample_width + 2 * x_offset)
@@ -91,12 +90,10 @@ class CrossStitchHelper:
             thresholds = pickle.load(open("thresholds.p", "rb"))
             threshold = thresholds[color_id]
 
-            print(color_id, threshold)
             (startY, startX) = np.where(result >= threshold)
             if len(startX) == len(startY) != 0:
                 found.append(color_id)
 
-            print(found)
 
         pickle.dump(found, open(f"{self.filename}_colors.p", "wb"))
 
