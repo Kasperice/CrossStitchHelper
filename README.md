@@ -30,7 +30,7 @@ Cross Stitch Helper is a project dedicated for people struggling with finding si
   - template file
 - Next, you need to check thoroughly size of single cross stitch in your scheme and template.
 - Then, prepare config file named 'config.ini' in your main directory.
-- And finally, execute program by running: <code>python main.py</code>
+- And finally, execute program by running: <code>pipenv run python main.py</code> [pipenv required]
 
 ## How to adjust Cross Stitch Helper settings
 Unfortunately it will need some your work, but final result is definitely worth it :)
