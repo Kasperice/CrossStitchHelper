@@ -5,6 +5,8 @@ from pick import pick, Option
 from configparser import ConfigParser
 from cross_stitch_helper import CrossStitchHelper
 
+FINAL_IMAGE_SCALE = 0.2
+
 
 if __name__ == "__main__":
     config_file = ConfigParser()
@@ -22,9 +24,6 @@ if __name__ == "__main__":
 
     colors_found = cross_stitch_helper.find_colors_on_page()
 
-    action = None
-    do_not_save = False
-
     main_menu_actions = [
         Option("Single color - enter single color number", "single"),
         Option("All - generate all images", "all"),
@@ -37,8 +36,8 @@ if __name__ == "__main__":
         print("Generating all files with default threshold")
         for color in colors_found:
             new_scheme, _ = cross_stitch_helper.prepare_scheme_for_color(color=color)
-            new_width = int(new_scheme.shape[1] * 0.2)
-            new_height = int(new_scheme.shape[0] * 0.2)
+            new_width = int(new_scheme.shape[1] * FINAL_IMAGE_SCALE)
+            new_height = int(new_scheme.shape[0] * FINAL_IMAGE_SCALE)
             clone = cv2.resize(
                 new_scheme, (new_width, new_height), interpolation=cv2.INTER_AREA
             )
@@ -104,9 +103,8 @@ if __name__ == "__main__":
                 break
 
             if option.value == "save":
-                scale_percent = 20
-                new_width = int(new_scheme.shape[1] * 0.2)
-                new_height = int(new_scheme.shape[0] * 0.2)
+                new_width = int(new_scheme.shape[1] * FINAL_IMAGE_SCALE)
+                new_height = int(new_scheme.shape[0] * FINAL_IMAGE_SCALE)
                 new_scheme = cv2.resize(
                     new_scheme, (new_width, new_height), interpolation=cv2.INTER_AREA
                 )
